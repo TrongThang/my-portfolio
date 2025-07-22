@@ -42,6 +42,8 @@ import {
   Clock,
   CheckCircle,
   Code2,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react"
 
 const fadeInUp = {
@@ -61,7 +63,8 @@ const staggerContainer = {
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about")
   const [isLoaded, setIsLoaded] = useState(false)
-
+  const [featureCarousels, setFeatureCarousels] = useState({})
+  
   useEffect(() => {
     setIsLoaded(true)
   }, [])
@@ -97,15 +100,37 @@ export default function Portfolio() {
       subtitle: "Nền tảng thương mại điện tử hoàn chỉnh",
       description:
         "Hệ thống quản lý thương mại điện tử với đầy đủ tính năng từ quản lý sản phẩm, đơn hàng, địa chỉ, vai trò, khách hàng đến thanh toán và báo cáo thống kê. Đồng thời tích hợp các tính năng của quy trình sản xuất sản phẩm và quản lý kho hàng bao gồm nhập, xuất, tồn kho.",
-      image: "/placeholder.svg?height=300&width=500",
-      tech: ["Node.js", "Express", "React", "Prisma", "MySQL", "Redis", "JWT", "Socket.IO", "Docker", "Swagger"],
+      mainImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
       features: [
-        "Authentication & Authorization với JWT",
-        "Quản lý sản phẩm, danh mục, reviews",
-        "Hệ thống giỏ hàng và thanh toán",
-        "Dashboard analytics và báo cáo",
-        "Notification system với FCM",
+        {
+          title: "Quản lý hóa đơn",
+          description: "Hệ thống tạo, quản lý và theo dõi hóa đơn tự động",
+          images: [
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+          ],
+        },
+        {
+          title: "Phiếu xuất/nhập kho",
+          description: "Quản lý kho hàng với phiếu xuất nhập tự động",
+          images: [
+            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+          ],
+        },
+        {
+          title: "Quản lý sản xuất",
+          description: "Theo dõi quy trình sản xuất và chất lượng sản phẩm",
+          images: [
+            "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
+          ],
+        },
       ],
+      tech: ["Node.js", "Express", "React", "Prisma", "MySQL", "Redis", "JWT", "Socket.IO", "Docker", "Swagger"],
       stats: {
         functions: "92+",
         apis: "24",
@@ -123,15 +148,37 @@ export default function Portfolio() {
       subtitle: "Hệ thống quản lý và điều khiển thiết bị IoT",
       description:
         "Nền tảng IoT với khả năng điều khiển real-time, tự động hóa thiết bị và hệ thống cảnh báo khẩn cấp cho khách hàng.",
-      image: "/placeholder.svg?height=300&width=500",
-      tech: ["Node.js", "TypeScript", "React", "Socket.IO", "Firebase FCM", "Prisma", "Redis", "Docker", "Swagger"],
+      mainImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop",
       features: [
-        "Quản lý 6 loại thiết bị IoT khác nhau",
-        "Real-time communication qua WebSocket",
-        "Hệ thống cảnh báo khẩn cấp",
-        "Tự động hóa thiết bị với logic AND/OR",
-        "Điều khiển LED với 15+ hiệu ứng",
+        {
+          title: "Dashboard điều khiển",
+          description: "Giao diện trực quan để điều khiển tất cả thiết bị IoT",
+          images: [
+            "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1545987796-200677ee1011?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&h=400&fit=crop",
+          ],
+        },
+        {
+          title: "Monitoring real-time",
+          description: "Theo dõi trạng thái thiết bị và cảnh báo tức thời",
+          images: [
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+          ],
+        },
+        {
+          title: "Automation system",
+          description: "Tự động hóa thiết bị với logic AND/OR phức tạp",
+          images: [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop",
+            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
+          ],
+        },
       ],
+      tech: ["Node.js", "TypeScript", "React", "Socket.IO", "Firebase FCM", "Prisma", "Redis", "Docker", "Swagger"],
       stats: {
         functions: "120+",
         devices: "6 loại",
@@ -161,6 +208,30 @@ export default function Portfolio() {
       avatar: "/placeholder.svg?height=60&width=60",
     },
   ]
+
+    // Carousel functions
+    const updateFeatureCarousel = (projectId: string, featureIndex: number, imageIndex: number) => {
+      setFeatureCarousels((prev) => ({
+        ...prev,
+        [`${projectId}-${featureIndex}`]: imageIndex,
+      }))
+    }
+  
+    const getFeatureCarouselIndex = (projectId: string, featureIndex: number) => {
+      return (featureCarousels as Record<string, number>)[`${projectId}-${featureIndex}`] || 0
+    }
+  
+    const nextImage = (projectId: string, featureIndex: number, totalImages: number) => {
+      const currentIndex = getFeatureCarouselIndex(projectId, featureIndex)
+      const nextIndex = (currentIndex + 1) % totalImages
+      updateFeatureCarousel(projectId, featureIndex, nextIndex)
+    }
+  
+    const prevImage = (projectId: string, featureIndex: number, totalImages: number) => {
+      const currentIndex = getFeatureCarouselIndex(projectId, featureIndex)
+      const prevIndex = (currentIndex - 1 + totalImages) % totalImages
+      updateFeatureCarousel(projectId, featureIndex, prevIndex)
+    }  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -518,7 +589,7 @@ export default function Portfolio() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <img
-                        src={project.image || "/placeholder.svg"}
+                        src={project.mainImage || "/placeholder.svg"}
                         alt={project.title}
                         className="w-full h-48 object-cover rounded-lg"
                       />
@@ -554,7 +625,7 @@ export default function Portfolio() {
                               Chi tiết
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-slate-900 text-white border-slate-700">
+                          <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto bg-slate-900 text-white border-slate-700">
                             <DialogHeader>
                               <DialogTitle className="flex items-center space-x-2">
                                 <project.icon className="w-6 h-6" />
@@ -562,29 +633,110 @@ export default function Portfolio() {
                               </DialogTitle>
                               <DialogDescription className="text-gray-400">{project.subtitle}</DialogDescription>
                             </DialogHeader>
-                            <div className="space-y-6">
-                              <img
-                                src={project.image || "/placeholder.svg"}
-                                alt={project.title}
-                                className="w-full h-64 object-cover rounded-lg"
-                              />
-                              <div>
-                                <h4 className="font-semibold mb-2">Mô tả dự án</h4>
-                                <p className="text-gray-300">{project.description}</p>
+
+                            <div className="space-y-8">
+                              {/* Main Project Image */}
+                              <div className="main-project-image">
+                                <img
+                                  src={project.mainImage || "/placeholder.svg"}
+                                  alt={project.title}
+                                  className="w-full h-80 object-cover rounded-lg"
+                                />
+                                <div className="mt-4">
+                                  <h4 className="text-lg font-semibold mb-2 text-white">Mô tả dự án</h4>
+                                  <p className="text-gray-300">{project.description}</p>
+                                </div>
                               </div>
-                              <div>
-                                <h4 className="font-semibold mb-2">Tính năng chính</h4>
-                                <ul className="space-y-1">
-                                  {project.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start space-x-2 text-sm">
-                                      <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                                      <span>{feature}</span>
-                                    </li>
+
+                              {/* Features with Carousels */}
+                              <div className="features-section">
+                                <h4 className="text-xl font-semibold mb-6 text-white">Tính năng chính</h4>
+                                <div className="space-y-8">
+                                  {project.features.map((feature, featureIndex) => (
+                                    <div
+                                      key={featureIndex}
+                                      className="feature-item bg-white/5 rounded-lg p-6 border border-white/10"
+                                    >
+                                      <div className="feature-header mb-4">
+                                        <h5 className="text-lg font-semibold text-white mb-2">{feature.title}</h5>
+                                        <p className="text-gray-400 text-sm">{feature.description}</p>
+                                      </div>
+
+                                      {/* Feature Image Carousel */}
+                                      <div className="feature-carousel relative">
+                                        <div className="carousel-container relative">
+                                          <img
+                                            src={
+                                              feature.images[getFeatureCarouselIndex(project.id, featureIndex)] ||
+                                              "/placeholder.svg"
+                                            }
+                                            alt={`${feature.title} - ${getFeatureCarouselIndex(project.id, featureIndex) + 1}`}
+                                            className="w-full h-64 object-cover rounded-lg transition-opacity duration-300"
+                                          />
+
+                                          {/* Navigation Arrows */}
+                                          <button
+                                            onClick={() => prevImage(project.id, featureIndex, feature.images.length)}
+                                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+                                          >
+                                            <ChevronLeft className="w-4 h-4" />
+                                          </button>
+                                          <button
+                                            onClick={() => nextImage(project.id, featureIndex, feature.images.length)}
+                                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200"
+                                          >
+                                            <ChevronRight className="w-4 h-4" />
+                                          </button>
+
+                                          {/* Carousel Dots */}
+                                          <div className="flex justify-center space-x-2 mt-4">
+                                            {feature.images.map((_, imageIndex) => (
+                                              <button
+                                                key={imageIndex}
+                                                onClick={() =>
+                                                  updateFeatureCarousel(project.id, featureIndex, imageIndex)
+                                                }
+                                                className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                                                  getFeatureCarouselIndex(project.id, featureIndex) === imageIndex
+                                                    ? "bg-blue-500 scale-125"
+                                                    : "bg-white/30 hover:bg-white/50"
+                                                }`}
+                                              />
+                                            ))}
+                                          </div>
+                                        </div>
+
+                                        {/* Carousel Thumbnails */}
+                                        <div className="carousel-thumbnails flex space-x-2 mt-4 overflow-x-auto pb-2">
+                                          {feature.images.map((image, imageIndex) => (
+                                            <button
+                                              key={imageIndex}
+                                              onClick={() =>
+                                                updateFeatureCarousel(project.id, featureIndex, imageIndex)
+                                              }
+                                              className={`flex-shrink-0 border-2 rounded-lg overflow-hidden transition-all duration-200 ${
+                                                getFeatureCarouselIndex(project.id, featureIndex) === imageIndex
+                                                  ? "border-blue-500 shadow-lg"
+                                                  : "border-transparent hover:border-white/30"
+                                              }`}
+                                            >
+                                              <img
+                                                src={image || "/placeholder.svg"}
+                                                alt={`${feature.title} thumbnail ${imageIndex + 1}`}
+                                                className="w-20 h-16 object-cover"
+                                              />
+                                            </button>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    </div>
                                   ))}
-                                </ul>
+                                </div>
                               </div>
+
+                              {/* Tech Stack */}
                               <div>
-                                <h4 className="font-semibold mb-2">Công nghệ sử dụng</h4>
+                                <h4 className="text-lg font-semibold mb-3 text-white">Công nghệ sử dụng</h4>
                                 <div className="flex flex-wrap gap-2">
                                   {project.tech.map((tech) => (
                                     <Badge key={tech} variant="secondary">
@@ -593,6 +745,8 @@ export default function Portfolio() {
                                   ))}
                                 </div>
                               </div>
+
+                              {/* Action Buttons */}
                               <div className="flex space-x-4">
                                 <Button asChild>
                                   <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
@@ -622,7 +776,6 @@ export default function Portfolio() {
               ))}
             </motion.div>
           </TabsContent>
-
           {/* Contact Section */}
           <TabsContent value="contact">
             <motion.div
